@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "packages/rust-test-lib",
+    "packages/rust-test-app"
+]

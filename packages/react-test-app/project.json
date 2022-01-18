@@ -1,0 +1,73 @@
+{
+  "root": "packages/react-test-app",
+  "sourceRoot": "packages/react-test-app/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/packages/react-test-app",
+        "index": "packages/react-test-app/src/index.html",
+        "baseHref": "/",
+        "main": "packages/react-test-app/src/main.tsx",
+        "polyfills": "packages/react-test-app/src/polyfills.ts",
+        "tsConfig": "packages/react-test-app/tsconfig.app.json",
+        "assets": [
+          "packages/react-test-app/src/favicon.ico",
+          "packages/react-test-app/src/assets"
+        ],
+        "styles": ["packages/react-test-app/src/styles.css"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "packages/react-test-app/src/environments/environment.ts",
+              "with": "packages/react-test-app/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "react-test-app:build",
+        "hmr": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "react-test-app:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/react-test-app/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/react-test-app"],
+      "options": {
+        "jestConfig": "packages/react-test-app/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
