@@ -1,5 +1,6 @@
 [workspace]
 members = [
+    "packages/rust-server-port",
     "packages/rust-test-lib",
     "packages/rust-test-app"
 ]
