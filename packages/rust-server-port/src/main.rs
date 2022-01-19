@@ -1,5 +1,5 @@
 // From: https://rust-lang-nursery.github.io/rust-cookbook/net/server.html
-use std::io::{Error, Read};
+use std::io::{Error, Read, Write};
 use std::net::{Ipv4Addr, SocketAddrV4, TcpListener, TcpStream};
 
 fn main() -> Result<(), Error> {
@@ -7,10 +7,12 @@ fn main() -> Result<(), Error> {
     let socket = SocketAddrV4::new(loopback, 0);
     let listener = TcpListener::bind(socket)?;
     let port = listener.local_addr()?;
+
     println!(
         "Listening on http://{}, access this port to end the program",
         port
     );
+
     match listener.accept() {
         //block  until requested
         Ok((mut _socket, addr)) => {
