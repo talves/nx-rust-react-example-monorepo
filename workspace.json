@@ -3,6 +3,7 @@
   "projects": {
     "react-test-app": "packages/react-test-app",
     "react-test-app-e2e": "packages/react-test-app-e2e",
+    "rust_api_call": "packages/rust-api-call",
     "rust_server_port": "packages/rust-server-port",
     "rust_test_app": "packages/rust-test-app",
     "rust_test_lib": "packages/rust-test-lib"
