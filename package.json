@@ -4,7 +4,9 @@
   "license": "MIT",
   "scripts": {
     "dep:graph": "npx nx dep-graph --file=dist/output/index.html",
-    "dep:start": "serve -s dist/output"
+    "dep:start": "serve -s dist/output",
+    "build:all": "yarn nx run-many --target=build --all",
+    "reset": "yarn nx reset"
   },
   "private": true,
   "dependencies": {
