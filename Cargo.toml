@@ -1,5 +1,7 @@
 [workspace]
 members = [
+    "packages/rust-dynamodb",
+    "packages/rust-cobalt-ssg-site",
     "packages/rust-api-call",
     "packages/rust-server-port",
     "packages/rust-test-lib",

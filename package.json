@@ -16,6 +16,9 @@
     "regenerator-runtime": "0.13.7",
     "tslib": "^2.0.0"
   },
+  "bin": {
+    "hello": "./bin/hello.js"
+  },
   "devDependencies": {
     "@nrwl/cli": "13.4.5",
     "@nrwl/cypress": "13.4.5",
